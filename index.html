@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    Id cliente <input type="number" id="idCliente"><br>
+    Nombre: <input type="text" id="nombreCliente"><br>
+    Correo: <input type="text" id="mailCliente"><br>
+    Edad: <input type="number" id="edadCliente"><br>
+
+    <button onclick="leerClientes()"> Mostrar </button>
+    <button onclick="guardarCliente()"> Guardar </button>
+    <button onclick="actualizarCliente()"> Actualizar </button>
+
+    <div id="listaClientes">
+        
+    </div>
+</body>
+</html>
