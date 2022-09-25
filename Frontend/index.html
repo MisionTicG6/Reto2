@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/funciones.js"></script>
+    <link rel="stylesheet" type="text/css" href="./CSS/estilos.css">
+    <title>Rent a Car</title>
+</head>
+<body>
+    <h1>RENT A CAR</h1>
+<div  class="container">
+    <div class="item" id="car">
+        <h2>CARROS</h2>
+        Id:<input type="number" id="idCarro"><br>
+        Brand:<input type="text" id="marcaCarro"><br>
+        Model:<input type="text" id="modeloCarro"><br>
+        Category_ID:<input type="number" id="category_ID"><br>
+
+        <button onclick="leerCarros()"> Mostrar </button>
+        <button onclick="guardarCarro()"> Guardar </button>
+        <button onclick="actualizarCarro()"> Actualizar </button>
+        <button onclick="consultarCarId()">consultar por id </button> 
+
+        <div id="listaCarros">
+
+        </div>
+        
+    </div>
+     <br>
+    <div class="item" id="client">
+        <h2>CLIENTES</h2>
+        Id cliente:<input type="number" id="idCliente"><br>
+        Nombre:<input type="text" id="nombreCliente"><br>
+        Correo:<input type="text" id="mailCliente"><br>
+        Edad:<input type="number" id="edadCliente"><br>
+
+        <button onclick="leerClientes()"> Mostrar </button>
+        <button onclick="guardarCliente()"> Guardar </button>
+        <button onclick="actualizarCliente()"> Actualizar </button>
+        <button onclick="consultarClientId()">consultar por id </button> 
+
+        <div id="listaClientes">
+
+        </div>
+    </div>
+    <br>
+    <div class="item" id="message">
+        <h2>MENSAJE</h2>
+        Id Mensaje:<input type="number" id="idMensaje"><br>
+        Mensaje:<input type="text" id="mensaje"><br>
+        
+        <button onclick="leerMensajes()"> Mostrar </button>
+        <button onclick="guardarMensaje()"> Guardar </button>
+        <button onclick="actualizarMensaje()"> Actualizar </button>
+        <button onclick="consultarMensajeId()">consultar por id </button> 
+
+        <div id="listaMensajes">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

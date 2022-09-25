@@ -1,0 +1,21 @@
+html {
+ background-color: cadetblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    display: inline-block;
+    grid-row: inherit;
+}
+
+.container {
+    overflow: hidden;
+    text-align: center;
+}
+
+.item {
+    float: left;
+}
