@@ -1,27 +1,18 @@
 //FUNCIONES CLIENT
 function leerClientes() {
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client",
         type: 'GET',
         dataType: 'JSON',
 
         success: function (respuesta) {
-
             pintarRespuesta(respuesta.items);
-
-            // let cs=respuesta.items;
-
-            // for(i=0;i<cs.length;i++){
-            //     $("#listaClientes").append(cs[i].name);
-
-            // }
         },
         error: function (xhr, status) {
             alert("error");
         }
     }
-
-    )
+    );
 }
 
 function pintarRespuesta(items) {
@@ -64,7 +55,7 @@ function guardarCliente() {
 
 
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client",
         type: 'POST',
         //dataType: 'JSON',
         data: dataToSend,
@@ -106,7 +97,7 @@ function actualizarCliente() {
 
 
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client",
         type: 'PUT',
         //dataType: 'JSON',
         data: dataToSend,
@@ -136,7 +127,7 @@ function borrarCliente(idElemento) {
     $.ajax(
         {
 
-            url: 'https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client',
+            url: 'https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client',
             type: 'DELETE',
             data: dataToSend,
             contentType: 'application/json',
@@ -149,7 +140,7 @@ function borrarCliente(idElemento) {
                 alert('Operacion no satisfactoria,' + xhr.status);
             },
             //Muestra los clientes despues de borrarlos
-            complete: function(){
+            complete: function () {
                 leerClientes();
             }
         }
@@ -162,30 +153,30 @@ function consultarClientId() {
 
     let codigo = $("#idCliente").val();
 
-    $.ajax (
-                {
+    $.ajax(
+        {
 
-                    url          : 'https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client/' + codigo ,
-                    type         : 'GET',
-                    dataType     : 'json',
-                    success      :  function(respuesta){
-                                       pintarRespuesta(respuesta.items);
-                                    },
-                    error       :   function(xhr,status){
-                                        alert('Operacion no satisfactoria,'+ xhr.status );
-                                    },
+            url: 'https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/client/client/' + codigo,
+            type: 'GET',
+            dataType: 'json',
+            success: function (respuesta) {
+                pintarRespuesta(respuesta.items);
+            },
+            error: function (xhr, status) {
+                alert('Operacion no satisfactoria,' + xhr.status);
+            },
 
 
 
-                }
-            );
+        }
+    );
 }
 
 /////////////////////////////////////////////////////FUNCIONES CAR////////////////////////////////////////////////////////////
 
 function leerCarros() {
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car",
         type: 'GET',
         dataType: 'JSON',
 
@@ -248,7 +239,7 @@ function guardarCarro() {
 
 
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car",
         type: 'POST',
         //dataType: 'JSON',
         data: dataToSend,
@@ -276,7 +267,7 @@ function borrarCarro(idElemento) {
     $.ajax(
         {
 
-            url: 'https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car',
+            url: 'https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car',
             type: 'DELETE',
             data: dataToSend,
             contentType: 'application/json',
@@ -289,7 +280,7 @@ function borrarCarro(idElemento) {
                 alert('Operacion no satisfactoria,' + xhr.status);
             },
             //Muestra los clientes despues de borrarlos
-            complete: function(){
+            complete: function () {
                 leerCarros();
             }
         }
@@ -299,26 +290,26 @@ function borrarCarro(idElemento) {
 
 function actualizarCarro() {
 
-     //Obtiene los valores de los input del formulario
-     let idCarro = $("#idCarro").val();
-     let marca = $("#marcaCarro").val();
-     let modelo = $("#modeloCarro").val();
-     let categoryID = $("#category_ID").val();
- 
-     //guarda los datos del formulario en un arreglo
-     let data = {
-         id: idCarro,
-         brand: marca,
-         model: modelo,
-         category_id: categoryID
-     };
+    //Obtiene los valores de los input del formulario
+    let idCarro = $("#idCarro").val();
+    let marca = $("#marcaCarro").val();
+    let modelo = $("#modeloCarro").val();
+    let categoryID = $("#category_ID").val();
+
+    //guarda los datos del formulario en un arreglo
+    let data = {
+        id: idCarro,
+        brand: marca,
+        model: modelo,
+        category_id: categoryID
+    };
 
     //convierte el arreglo en formato JSON
     let dataToSend = JSON.stringify(data);
 
 
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car",
         type: 'PUT',
         //dataType: 'JSON',
         data: dataToSend,
@@ -343,23 +334,23 @@ function consultarCarId() {
 
     let codigo = $("#idCarro").val();
 
-    $.ajax (
-                {
+    $.ajax(
+        {
 
-                    url          : 'https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car/' + codigo ,
-                    type         : 'GET',
-                    dataType     : 'json',
-                    success      :  function(respuesta){
-                                       pintarCarros(respuesta.items);
-                                    },
-                    error       :   function(xhr,status){
-                                        alert('Operacion no satisfactoria,'+ xhr.status );
-                                    },
+            url: 'https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/car/car/' + codigo,
+            type: 'GET',
+            dataType: 'json',
+            success: function (respuesta) {
+                pintarCarros(respuesta.items);
+            },
+            error: function (xhr, status) {
+                alert('Operacion no satisfactoria,' + xhr.status);
+            },
 
 
 
-                }
-            );
+        }
+    );
 }
 
 
@@ -367,7 +358,7 @@ function consultarCarId() {
 
 function leerMensajes() {
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message",
         type: 'GET',
         dataType: 'JSON',
 
@@ -413,7 +404,6 @@ function guardarMensaje() {
     let idMensaje = $("#idMensaje").val();
     let mensaje = $("#mensaje").val();
 
-
     //guarda los datos del formulario en un arreglo
     let data = {
         id: idMensaje,
@@ -425,7 +415,7 @@ function guardarMensaje() {
 
 
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message",
         type: 'POST',
         //dataType: 'JSON',
         data: dataToSend,
@@ -451,7 +441,7 @@ function borrarMensaje(idElemento) {
     $.ajax(
         {
 
-            url: 'https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message',
+            url: 'https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message',
             type: 'DELETE',
             data: dataToSend,
             contentType: 'application/json',
@@ -464,7 +454,7 @@ function borrarMensaje(idElemento) {
                 alert('Operacion no satisfactoria,' + xhr.status);
             },
             //Muestra los clientes despues de borrarlos
-            complete: function(){
+            complete: function () {
                 leerMensajes();
             }
         }
@@ -474,22 +464,22 @@ function borrarMensaje(idElemento) {
 
 function actualizarMensaje() {
 
-     //Obtiene los valores de los input del formulario
-     let idCarro = $("#idMensaje").val();
-     let marca = $("#mensaje").val();
- 
-     //guarda los datos del formulario en un arreglo
-     let data = {
-         id: idCarro,
-         messagetext: marca,
-     };
+    //Obtiene los valores de los input del formulario
+    let idCarro = $("#idMensaje").val();
+    let marca = $("#mensaje").val();
+
+    //guarda los datos del formulario en un arreglo
+    let data = {
+        id: idCarro,
+        messagetext: marca,
+    };
 
     //convierte el arreglo en formato JSON
     let dataToSend = JSON.stringify(data);
 
 
     $.ajax({
-        url: "https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message",
+        url: "https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message",
         type: 'PUT',
         //dataType: 'JSON',
         data: dataToSend,
@@ -512,21 +502,21 @@ function consultarMensajeId() {
 
     let codigo = $("#idMensaje").val();
 
-    $.ajax (
-                {
+    $.ajax(
+        {
 
-                    url          : 'https://g0d4df5b0e7d6dd-oru0gqvis5phf58o.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message/' + codigo ,
-                    type         : 'GET',
-                    dataType     : 'json',
-                    success      :  function(respuesta){
-                                       pintarMensajes(respuesta.items);
-                                    },
-                    error       :   function(xhr,status){
-                                        alert('Operacion no satisfactoria,'+ xhr.status );
-                                    },
+            url: 'https://gda56cef028a361-gtr87noit6hyuzrh.adb.us-phoenix-1.oraclecloudapps.com/ords/admin/message/message/' + codigo,
+            type: 'GET',
+            dataType: 'json',
+            success: function (respuesta) {
+                pintarMensajes(respuesta.items);
+            },
+            error: function (xhr, status) {
+                alert('Operacion no satisfactoria,' + xhr.status);
+            },
 
 
 
-                }
-            );
+        }
+    );
 }
